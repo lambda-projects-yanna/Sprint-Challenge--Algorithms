@@ -127,18 +127,38 @@ class SortingRobot:
             
 
     def sort(self):
-        self.set_light_on()
-        while(self.can_move_right() == True):
-            self.move_right()
-            if(self.compare_item() == 1):
+        while(self):
+            self.set_light_on()
+            while(self.can_move_right() == True):
+                self.move_right()
+                if(self.compare_item() == 1):
+                    self.swap_item()
+                    self.set_light_off()
+                self.swap_and_return()
+            if self.light_is_on() == True:
                 self.swap_item()
-                self.set_light_off()
-            self.swap_and_return()
-        self.swap_item()
-        if self.light_is_on() == False:
-            while(self.can_move_left() == True):
+                break
+            else:
+                self.swap_item()
+    
+            while self.can_move_left() == True:
                 self.move_left()
-            self.sort()
+        
+        while self.can_move_left():
+            self.move_left()
+        self.move_right()
+        if self.compare_item() == 1:
+            print('big')
+            self.swap_item()
+            self.move_left()
+            self.swap_item()
+        elif self.compare_item() == -1:
+            print('small')
+            self.move_left()
+            self.swap_item()
+        print(f' DONE: {self._item}, {self._position}, {self._list} \n')
+
+
 
 
 if __name__ == "__main__":
