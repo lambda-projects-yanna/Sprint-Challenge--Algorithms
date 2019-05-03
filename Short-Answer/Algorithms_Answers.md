@@ -9,9 +9,11 @@ b) The first loop will run n times.
     The third loop will run to n.
     The fourth loop will run to 10+k elements, where k = n at most, so this will run at most n times.
 so the runtime is O(n^4) at most.
+n^3
 
 c) this runs at most 2(bunnies) times 
 so runtime is O(2n) at most
+actually n
 
 d) we can go to the middle floor of the building and check if an egg breaks from there. If yes, we drop an egg from each floor below midpoint until we find one where it does not break.
 If the egg doesn't break at the middle floor, we drop an egg from each floor above the base case until we find a floor where the egg does break.
