@@ -128,6 +128,7 @@ class SortingRobot:
 
     def sort(self):
         self.set_light_on()
+
         while(self.can_move_right() == True):
             self.move_right()
             if(self.compare_item() == 1):
@@ -135,6 +136,7 @@ class SortingRobot:
                 self.set_light_off()
             self.swap_and_return()
         self.swap_item()
+
         if self.light_is_on() == False:
             while(self.can_move_left() == True):
                 self.move_left()
@@ -143,6 +145,7 @@ class SortingRobot:
         while self.can_move_left():
             self.move_left()
         self.move_right()
+        
         if self.compare_item() == 1:
             self.swap_item()
             self.move_left()
