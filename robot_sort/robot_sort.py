@@ -94,7 +94,7 @@ class SortingRobot:
 
     # def sort(self):
     #     """
-    #     Sort the robot's list.
+    #     psuedo code
     #     """
     #     #for i in range(len(l)):
     #     self.swap_item() # pick up first item
